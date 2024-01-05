@@ -1,0 +1,302 @@
+body {
+    margin: 0;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap");
+
+html,
+body,
+#root,
+.app,
+p
+.content {
+  height: 100%;
+  width: 100%;
+  font-family: 'Inter', sans-serif;
+  
+}
+img{
+  border-radius: 10px;
+}
+
+body::-webkit-scrollbar{
+  width: 0;
+}
+
+.background-video-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Inter', sans-serif;
+}
+
+.background-video-container::-webkit-scrollbar {
+  width: 0;
+}
+
+.background-video {
+  width: 100%;
+  height: calc(100%);
+  object-fit: cover;
+}
+
+.layout{
+  height: calc(100% - 60px);
+  width: 100%;
+  overflow-y: scroll;
+  position: absolute;
+  top: 60px;
+  display: flex;
+  flex-direction: column;
+}
+
+.layout::-webkit-scrollbar {
+  width: 0;
+}
+
+.home-carosel {
+  height: 100%;
+  width: 45%;
+  text-align: center;
+  color: #fff; /* Adjust text color as needed */
+  z-index: 2;
+  margin-left: 5%;
+ 
+  
+}
+
+
+.home-carosel2 {
+  height: 100%;
+  width: 45%;
+  text-align: center;
+  color: #fff; /* Adjust text color as needed */
+  z-index: 2;
+  margin-right: 5%;
+ 
+  
+}
+
+@keyframes fadeInfromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-200px); /* Adjust the initial position as needed */
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInfromRight {
+  from {
+    opacity: 0;
+    transform: translateX(150px);
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInfromBottom {
+  from {
+    opacity: 0;
+    transform: translateY(150px);
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animated-element {
+  opacity: 0;
+  transform: translatex(-200px);
+  transition: opacity 1s , transform 4s ;
+}
+
+.animate {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+
+.animated-upcoming {
+  opacity: 0;
+  transform: translatex(200px);
+  transition: opacity 1s , transform 5s ;
+}
+
+.upcoming {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.animated-live {
+  opacity: 0;
+  transform: translatex(-200px);
+  transition: opacity 1s , transform 5s ;
+}
+
+.live {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.animated-previous {
+  opacity: 0;
+  transform: translateY(200px);
+  transition: opacity 1s , transform 5s ;
+}
+
+.previous {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+.heading1{
+  animation: fadeInfromLeft 3s; 
+}
+
+.heading2{
+  animation: fadeInfromRight 3s; 
+}
+
+.heading3{
+  animation: fadeInfromBottom 3s; 
+}
+
+
+
+
+
+
+.home-tags {
+  height: 80%;
+  width: 50%;
+  color: #fff; /* Adjust text color as needed */
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.4);
+  margin-right: 10%;
+  transform: translateX(-10%);
+}
+
+.home-tags2 {
+  height: 75%;
+  width: 35%;
+  color: #fff; /* Adjust text color as needed */
+  z-index: 1;
+  /* background-color: rgba(0, 0, 0, 0.4); */
+  margin-left: 20%;
+  /* transform: translateX(-10%); */
+}
+
+.footer-overlay {
+  height: auto;
+  width: 100%;
+  /* position: absolute;
+  bottom: 0;
+  left: 0; */
+  margin-top: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.image_video_button{
+  cursor: pointer;
+  color: white;
+  padding: 5px;
+  border :  1px solid gray;
+  border-radius: 15px;
+  margin-top: 30px ;
+  width: 90% ;
+  text-align: center ;
+  font-weight: bold ;
+  font-size: 30px;
+}
+
+.image_video_button:hover{
+  transform: scale(1.1);
+}
+
+.headerStyles { 
+  height: 60px;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+
+
+
+.menu-items{
+  color: white;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.gallery-items{
+  color: rgb(200, 185, 185);
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.image-container {
+  position: relative;
+  display: inline-block;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  overflow: hidden;
+  transition: height 0.5s ease;
+}
+
+.overlay-content {
+  padding: 20px;
+  color: white;
+}
+
+.overlay-trigger-container:hover .overlay {
+  height: 100%;
+}
+
+.overlay-trigger-container {
+  position: relative;
+}
+
+.overlay-trigger {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.eventscrollimage{
+  height: 200px;
+  width: 200px;
+  object-fit: cover;
+}
+
+.gallerybuttons{
+  cursor: pointer;
+  height: 30px;
+}
+
+
+
+
+

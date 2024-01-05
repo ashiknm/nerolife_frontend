@@ -1,0 +1,22 @@
+/* CustomCarousel.css */
+
+.custom-carousel-container {
+    overflow: hidden;
+    width: 100%;
+  }
+  
+  .carousel-wrapper {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .carousel-item {
+    width: 100%;
+    flex: 0 0 20%; /* 20% width for 5 items */
+  }
+  
+.carouselimage {
+    width: 100%;
+    height: auto;
+  }
+  

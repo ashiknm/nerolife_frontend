@@ -1,0 +1,178 @@
+.outletmaindiv{
+  width: 100%;
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+
+.layout::-webkit-scrollbar{
+  width: 0;
+}
+
+.outletparent{
+   height : auto;
+   width: 100%;
+}
+
+.outletleft, .outletright{
+  width: 50%;
+}
+
+.outletright img { width: 100%; height: 100%;}
+
+@media screen and (max-width: 600px) {
+      .outletleft, .outletright{
+            width: 100%;
+          }    
+          
+          .outletleft{
+            display:flex;
+            justify-content: center;
+            text-align: center;
+          }
+}
+
+
+.outletclubsparent{
+  height : auto;
+}
+
+.outletclubsleft, .outletclubscenter, .outletclubsright{
+ width: 33%;
+ height: auto;
+}
+
+.outletclubsleft img { width: 50%; height: 300px; margin : 10px auto}
+.outletclubscenter img { width: 50%; height: 300px; margin : 10px auto}
+.outletclubsright img { width: 50%; height: 300px; margin : 10px auto}
+
+@media screen and (max-width: 600px) {
+     .outletclubsleft, .outletclubscenter, .outletclubsright{
+           width: 100%;
+           margin-top: 5px;
+           margin-bottom : 5px;
+           height: auto;
+         }   
+         
+         .outletclubsparent{
+              height: auto;
+         }
+
+         .outletclubsleft img {  height: auto }
+          .outletclubscenter img { height: auto }
+          .outletclubsright img {  height: auto }
+
+          .category_name_heading{text-align: center; margin-top: 15px; margin-bottom: 15px;}
+}
+
+
+.footer-overlay {
+  height: auto;
+  width: 100%;
+  /* position: absolute;
+  bottom: 0;
+  left: 0; */
+  margin-top: auto;
+}
+
+.eventimage{
+  width: 300px; height: 90%;
+  object-fit: cover;
+}
+
+@media screen and (max-width: 600px) {
+  .eventimage{
+    width: 100%; height: auto;
+  }
+}
+
+.threeeventimage{
+  width: 500px; height: 90%;
+}
+
+@media screen and (max-width: 600px) {
+  .threeeventimage{
+    width: 100%; height: auto;
+  }
+}
+
+
+
+.eachartistmainsection{
+  width: 100%;
+  height: 80vh;
+  position: relative;
+
+  /* margin: 10px auto; */
+}
+
+.eachartistmainsection img{
+  height: 100%;
+  width: 100%;
+}
+
+/* .eachartistparent{eachartistmainsection
+  position: relative;
+} */
+
+
+
+.artistpicturebottom{
+  position: absolute;
+  height: 300px;
+  width: 300px;
+  bottom: 5%;
+  transform: translate(0%, 50%);
+}
+
+.artiststars{
+  position: absolute;
+  right:0;
+  bottom: 0;
+}
+
+.avatarimg{
+  height: 300px;
+  width:300px;
+  padding: 20px;
+}
+
+@media screen and (max-width: 600px) {
+  .artistpicturebottom{
+    position: absolute;
+    height: 150px;
+    width: 150px;
+    bottom: 0;
+    left: 0;
+
+  
+    
+  }
+  .avatarimg{
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    
+    
+  }
+  
+  .artiststars{
+    position: absolute;
+    bottom : 0%;
+    right: 0%;
+  }
+
+  .eachartistmainsection img{
+    height: 100%;
+    width: 100%;
+    
+  }
+
+  .eachartistmainsection{
+    width: 100%;
+    height: 400px;
+    position: relative;
+    /* margin: 10px auto; */
+  }
+}
