@@ -13,7 +13,7 @@ import { useParams } from "react-router-dom";
 
 import { useState, useEffect } from "react";
 
-const PotraitExperience = () => {
+const ArtistVideos = () => {
   const { artist_id } = useParams();
 
   const [potraitImages, setPotraitImages] = useState([]);
@@ -81,7 +81,7 @@ const PotraitExperience = () => {
       <div className="outletparent d-flex flex-wrap mb-5">
         <div className="outletleft d-flex align-items-center justify-content-center">
           <div>
-            <h1 className="me-5 text-light fw-bold fs-3">POTRAITS</h1>
+            <h1 className="me-5 text-light fw-bold fs-3">VIDEOS</h1>
           </div>
         </div>
 
@@ -141,4 +141,4 @@ const PotraitExperience = () => {
   );
 };
 
-export default PotraitExperience;
+export default ArtistVideos;

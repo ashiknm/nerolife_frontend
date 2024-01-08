@@ -39,7 +39,7 @@ const AmbienceExperience = () => {
     const getAmbienceImages = async () => {
       try {
         console.log("getting");
-        const response = await axios.get(`images/ambience/${outlet_id}`, {
+        const response = await axios.get(`images/outlet_ambience_image/${outlet_id}`, {
           // // signal: controller.signal
           // 'Access-Control-Allow-Origin' : true
         });

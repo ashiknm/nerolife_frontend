@@ -8,26 +8,25 @@ import axios from "../api/axios";
 
 import {useNavigate} from "react-router-dom"
 
-const Contentsofshows = () => {
+const Artistcontent2 = () => {
 
     const navigate = useNavigate();
 
 
 
-  const [allEvents, setAllEvents] = useState([]);
+  const [allartists, setAllartists] = useState([]);
 
   useEffect (() => {
     let isMounted = true;
 
-    const getAllEvents = async () => {
+    const getAllartists = async () => {
         try {
           console.log("getting")
-            const response = await axios.get(`/events`, {
+            const response = await axios.get(`/artists`, {
                 // // signal: controller.signal
                 // 'Access-Control-Allow-Origin' : true
             });
-            isMounted && setAllEvents(response.data);
-            console.log("events",response.data);
+            isMounted && setAllartists(response.data);
   
         } catch (err) {
             console.error(err);
@@ -35,7 +34,7 @@ const Contentsofshows = () => {
         }
     }
 
-     getAllEvents();
+     getAllartists();
 
 
     return () => {
@@ -52,10 +51,10 @@ const Contentsofshows = () => {
 <div className="mb-5 pt-10 pb-10">
   <div className=" flex justify-evenly align-items-center flex-wrap">
 
-  {allEvents.map((event, index) => (
-          <div KEY = {index} onClick={()=>navigate(`/eventsimages/${event.event_id}`)} className="flex flex-column m-2" style={{ height: "400px" }} >
+  {allartists.map((artist, index) => (
+          <div KEY = {index} onClick={()=>navigate(`/artistvideos/${artist.artist_id}`)} className="flex flex-column m-2" style={{ height: "400px" }} >
           <img
-            src={event.poster_url}
+            src={artist.artist_profile_icon}
             alt="one"
             // style={{ height: "90%", width: "300px" }}
             className="eventimage"
@@ -74,4 +73,4 @@ const Contentsofshows = () => {
   );
 };
 
-export default Contentsofshows;
+export default Artistcontent2;

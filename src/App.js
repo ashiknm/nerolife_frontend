@@ -14,9 +14,16 @@ import Content from "./pages/Content";
 import Contentsofshows from "./pages/Contentsofshows";
 import Eventsimages from "./pages/Eventsimages";
 import Outletcontent from "./pages/Outletcontent";
+import Outletcontent2 from "./pages/Outletcontent2";
 import Artistcontent from "./pages/Artistcontent";
 import AmbienceExperience from "./pages/AmbienceExperience";
 import PotraitExperience from "./pages/PotraitExperience";
+import Videocontent from "./pages/Videocontent";
+import Shows from "./pages/Shows";
+import Artistcontent2 from "./pages/Artistcontent2";
+import Eventsvideos from "./pages/Eventsvideos";
+import ArtistVideos from "./pages/ArtistVideos";
+import OutletVideos from "./pages/OutletVideos";
 
 import { Routes, Route } from "react-router-dom";
 
@@ -69,18 +76,28 @@ function App() {
       <Route path="/eachartist" element={<Eachartist />} />
       <Route path="/singleevent/:event_id" element={<Singleevent />} />
 
-      <Route path="/videos" element={<Eachartist />} />
+      <Route path="/videos" element={<Videocontent />} />
       <Route path="/images" element={<Content />} />
 
+
+
       <Route path="/contentsofshows" element={<Contentsofshows/>} />
+      <Route path="/contentsofshows2" element={<Shows/>} />
+
       <Route path="/eventsimages/:event_id" element={<Eventsimages/>} />
+      <Route path="/eventsvideos/:event_id" element={<Eventsvideos/>} />
  
       <Route path="/ambienceexperience/:outlet_id" element={<AmbienceExperience/>} />
+      <Route path="/outletvideos/:outlet_id" element={<OutletVideos/>} />
+
       <Route path="/potraitexperience/:artist_id" element={<PotraitExperience/>} />
+      <Route path="/artistvideos/:artist_id" element={<ArtistVideos/>} />
    
 
       <Route path="/outletcontents" element={<Outletcontent/>} />
+      <Route path="/outletcontents2" element={<Outletcontent2/>} />
       <Route path="/artistcontents" element={<Artistcontent/>} />
+      <Route path="/artistcontents2" element={<Artistcontent2/>} />
 
       
     </Route>

@@ -14,19 +14,19 @@ const Artistcontent = () => {
 
 
 
-  const [alloutlets, setAlloutlets] = useState([]);
+  const [allartists, setAllartists] = useState([]);
 
   useEffect (() => {
     let isMounted = true;
 
-    const getAlloutlets = async () => {
+    const getAllartists = async () => {
         try {
           console.log("getting")
-            const response = await axios.get(`/outlets`, {
+            const response = await axios.get(`/artists`, {
                 // // signal: controller.signal
                 // 'Access-Control-Allow-Origin' : true
             });
-            isMounted && setAlloutlets(response.data);
+            isMounted && setAllartists(response.data);
   
         } catch (err) {
             console.error(err);
@@ -34,7 +34,7 @@ const Artistcontent = () => {
         }
     }
 
-     getAlloutlets();
+     getAllartists();
 
 
     return () => {
@@ -51,10 +51,10 @@ const Artistcontent = () => {
 <div className="mb-5 pt-10 pb-10">
   <div className=" flex justify-evenly align-items-center flex-wrap">
 
-  {alloutlets.map((outlet, index) => (
-          <div KEY = {index} onClick={()=>navigate(`/potraitexperience/${outlet.outlet_id}`)} className="flex flex-column m-2" style={{ height: "400px" }} >
+  {allartists.map((artist, index) => (
+          <div KEY = {index} onClick={()=>navigate(`/potraitexperience/${artist.artist_id}`)} className="flex flex-column m-2" style={{ height: "400px" }} >
           <img
-            src={outlet.outlet_icon}
+            src={artist.artist_profile_icon}
             alt="one"
             // style={{ height: "90%", width: "300px" }}
             className="eventimage"

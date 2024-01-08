@@ -13,10 +13,10 @@ import { useParams } from "react-router-dom";
 
 import { useState, useEffect } from "react";
 
-const PotraitExperience = () => {
-  const { artist_id } = useParams();
+const OutletVideos = () => {
+  const { outlet_id } = useParams();
 
-  const [potraitImages, setPotraitImages] = useState([]);
+  const [ambienceImages, setAmbienceImages] = useState([]);
   const [experienceImages, setExperienceImages] = useState([]);
 
   const [activeSlideIndex, setActiveSlideIndex] = useState(0);
@@ -24,26 +24,26 @@ const PotraitExperience = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveSlideIndex(
-        (prevIndex) => (prevIndex + 1) % potraitImages.length
+        (prevIndex) => (prevIndex + 1) % ambienceImages.length
       );
     }, 3000); // Adjust the interval according to your preference in milliseconds
 
     return () => clearInterval(interval); // Cleanup interval on component unmount
-  }, [potraitImages.length]);
+  }, [ambienceImages.length]);
 
   useEffect(() => {
     let isMounted = true;
 
-    console.log("outlet id : ", artist_id);
+    console.log("outlet id : ", outlet_id);
 
-    const getPotraitImages = async () => {
+    const getAmbienceImages = async () => {
       try {
         console.log("getting");
-        const response = await axios.get(`images/ambience/O001`, {
+        const response = await axios.get(`images/outlet_ambience_image/${outlet_id}`, {
           // // signal: controller.signal
           // 'Access-Control-Allow-Origin' : true
         });
-        isMounted && setPotraitImages(response.data);
+        isMounted && setAmbienceImages(response.data);
         console.log("ambience", response.data);
       } catch (err) {
         console.error(err);
@@ -54,7 +54,7 @@ const PotraitExperience = () => {
     const getExperienceImages = async () => {
       try {
         console.log("getting");
-        const response = await axios.get(`/images/experience/O001`, {
+        const response = await axios.get(`/images/experience/${outlet_id}`, {
           // // signal: controller.signal
           // 'Access-Control-Allow-Origin' : true
         });
@@ -66,7 +66,7 @@ const PotraitExperience = () => {
       }
     };
 
-    getPotraitImages();
+    getAmbienceImages();
     getExperienceImages();
 
     return () => {
@@ -81,7 +81,7 @@ const PotraitExperience = () => {
       <div className="outletparent d-flex flex-wrap mb-5">
         <div className="outletleft d-flex align-items-center justify-content-center">
           <div>
-            <h1 className="me-5 text-light fw-bold fs-3">POTRAITS</h1>
+            <h1 className="me-5 text-light fw-bold fs-3">AMBIENCE</h1>
           </div>
         </div>
 
@@ -105,7 +105,7 @@ const PotraitExperience = () => {
               autoPlay={true}
               autoPlayInterval={3000}
             >
-              {potraitImages.map((ambience, index) => (
+              {ambienceImages.map((ambience, index) => (
                 <div key={index}   style={{ height: "500px", width: '600px' }}>
                   <img
                     src={ambience.icon}
@@ -118,7 +118,7 @@ const PotraitExperience = () => {
       </div>
 
       <div className=" flex justify-evenly align-items-center flex-wrap">
-        {potraitImages.map((ambience, index) => (
+        {ambienceImages.map((ambience, index) => (
           <div
             KEY={index}
             className="flex flex-column m-2"
@@ -141,4 +141,4 @@ const PotraitExperience = () => {
   );
 };
 
-export default PotraitExperience;
+export default OutletVideos;

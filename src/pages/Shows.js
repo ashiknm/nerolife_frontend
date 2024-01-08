@@ -8,7 +8,7 @@ import axios from "../api/axios";
 
 import {useNavigate} from "react-router-dom"
 
-const Contentsofshows = () => {
+const Shows = () => {
 
     const navigate = useNavigate();
 
@@ -53,7 +53,7 @@ const Contentsofshows = () => {
   <div className=" flex justify-evenly align-items-center flex-wrap">
 
   {allEvents.map((event, index) => (
-          <div KEY = {index} onClick={()=>navigate(`/eventsimages/${event.event_id}`)} className="flex flex-column m-2" style={{ height: "400px" }} >
+          <div KEY = {index} onClick={()=>navigate(`/eventsvideos/${event.event_id}`)} className="flex flex-column m-2" style={{ height: "400px" }} >
           <img
             src={event.poster_url}
             alt="one"
@@ -74,4 +74,4 @@ const Contentsofshows = () => {
   );
 };
 
-export default Contentsofshows;
+export default Shows;
